@@ -6,24 +6,6 @@ function App() {
     email: '',
     useCase: '',
   });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setFormData({
-      email: '',
-      useCase: '',
-    });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
@@ -58,6 +40,7 @@ function App() {
               method="POST"
               data-netlify="true"
               name="early-access"
+              action="/thank-you"
               className="space-y-6"
             >
               <input type="hidden" name="form-name" value="early-access" />
