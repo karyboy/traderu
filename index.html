@@ -8,7 +8,11 @@
   </head>
   <body>
     <div id="root"></div>
-    <input type="hidden" name="form-name" value="early-access" />
+    <form name="early-access" netlify netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
+      <input type="text" name="description" />
+      <textarea name="message"></textarea>
+    </form>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
