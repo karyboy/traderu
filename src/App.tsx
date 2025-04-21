@@ -5,7 +5,6 @@ function App() {
   const [formData, setFormData] = useState({
     email: '',
     useCase: '',
-    tradingIntervals: '',
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -15,7 +14,6 @@ function App() {
     setFormData({
       email: '',
       useCase: '',
-      tradingIntervals: '',
     });
   };
 
@@ -56,65 +54,38 @@ function App() {
 
           {/* Early Access Form */}
           <div className="max-w-lg mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {!submitted ? (
-                <>
-                  <div className="space-y-4">
-                    <div>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="Enter your email for early access"
-                        className="w-full px-4 py-3 rounded-lg bg-white/10 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <textarea
-                        name="useCase"
-                        value={formData.useCase}
-                        onChange={handleChange}
-                        placeholder="Describe your use case (e.g., day trading, swing trading, specific markets)"
-                        className="w-full px-4 py-3 rounded-lg bg-white/10 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 min-h-[100px]"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <select
-                        name="tradingIntervals"
-                        value={formData.tradingIntervals}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg bg-white/10 border border-gray-600 text-white focus:outline-none focus:border-blue-500"
-                        required
-                      >
-                        <option value="" disabled>Select trading intervals</option>
-                        <option value="1m">1 minute</option>
-                        <option value="5m">5 minutes</option>
-                        <option value="15m">15 minutes</option>
-                        <option value="30m">30 minutes</option>
-                        <option value="1h">1 hour</option>
-                        <option value="4h">4 hours</option>
-                        <option value="1d">Daily</option>
-                        <option value="1w">Weekly</option>
-                      </select>
-                    </div>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg flex items-center justify-center space-x-2 transition duration-200"
-                  >
-                    <span>Get Early Access</span>
-                    <ChevronRight className="w-5 h-5" />
-                  </button>
-                </>
-              ) : (
-                <div className="flex items-center justify-center space-x-2 text-green-400">
-                  <CheckCircle className="w-6 h-6" />
-                  <span>Thank you! We'll be in touch soon.</span>
+            <form
+              method="POST"
+              data-netlify="true"
+              name="early-access"
+              className="space-y-6"
+            >
+              <input type="hidden" name="form-name" value="early-access" />
+              <div className="space-y-4">
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email for early access"
+                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
+                    required
+                  />
                 </div>
-              )}
+                <div>
+                  <textarea
+                    name="description"
+                    placeholder="Enter a description or message"
+                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="w-full py-3 px-6 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-bold"
+              >
+                Submit
+              </button>
             </form>
           </div>
         </div>
