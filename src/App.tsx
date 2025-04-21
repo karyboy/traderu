@@ -38,9 +38,7 @@ function App() {
           <div className="max-w-lg mx-auto">
             <form
               method="POST"
-              data-netlify="true"
               name="early-access"
-              action="/thank-you"
               className="space-y-6"
             >
               <input type="hidden" name="form-name" value="early-access" />
