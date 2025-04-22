@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { LineChart, Bot, Zap, BrainCircuit, Bell, BarChart3, Headset as HeadSet, ChevronRight, CheckCircle, Users, MessageSquare, Clock, Code2, Rocket, Plus, Minus, Target } from 'lucide-react';
+import { DemoRequestForm } from './components/DemoRequestForm';
 
 function AnimatedSection({ children }: { children: React.ReactNode }) {
   const [ref, inView] = useInView({
@@ -47,6 +48,13 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 }
 
 function App() {
+  const [showDemoForm, setShowDemoForm] = useState(false);
+
+  const handleDemoSubmit = (data: { email: string; useCase: string }) => {
+    // Here you would typically send this data to your backend
+    console.log('Demo request submitted:', data);
+  };
+
   const features = [
     {
       icon: <BrainCircuit className="w-12 h-12 text-blue-500" />,
@@ -178,7 +186,11 @@ function App() {
               Leverage next-generation AI models to detect patterns and trading setups—tailored to your unique candlestick strategy.
             </p>
             <div className="flex justify-center space-x-4">
-              <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center space-x-2 transition duration-200">
+              <button 
+                onClick={() => setShowDemoForm(true)}
+                className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center space-x-2 transition duration-200"
+                type="button"
+              >
                 <span>Request Demo</span>
                 <ChevronRight className="w-5 h-5" />
               </button>
@@ -382,7 +394,11 @@ function App() {
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Get started with our AI-powered pattern recognition today and never miss a trading opportunity again.
             </p>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center space-x-2 mx-auto transition duration-200">
+            <button 
+              onClick={() => setShowDemoForm(true)}
+              className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center space-x-2 mx-auto transition duration-200"
+              type="button"
+            >
               <span>Schedule a Demo</span>
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -402,6 +418,13 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {showDemoForm && (
+        <DemoRequestForm
+          onClose={() => setShowDemoForm(false)}
+          onSubmit={handleDemoSubmit}
+        />
+      )}
     </div>
   );
 }
