@@ -10,10 +10,34 @@ export function DemoRequestForm({ onClose, onSubmit }: DemoRequestFormProps) {
   const [email, setEmail] = useState('');
   const [useCase, setUseCase] = useState('');
 
+  const encode = (data: Record<string, string>) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onSubmit({ email, useCase });
-    onClose();
+    
+    // Send to Netlify
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ 
+        "form-name": "demo-request",
+        email,
+        useCase
+      })
+    })
+    .then(() => {
+      // Call the parent onSubmit handler
+      onSubmit({ email, useCase });
+      onClose();
+    })
+    .catch(error => {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting the form. Please try again.');
+    });
   };
 
   return (
