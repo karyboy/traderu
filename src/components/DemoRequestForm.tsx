@@ -29,12 +29,12 @@ export function DemoRequestForm({ onClose, onSubmit }: DemoRequestFormProps) {
       })
     })
     .then(() => {
-      alert("Success!");
+      console.log("Success!");
       onSubmit({ email, useCase });
       onClose();
     })
     .catch(error => {
-      alert("Error: " + error);
+      console.log("Error: " + error);
     });
   };
 
