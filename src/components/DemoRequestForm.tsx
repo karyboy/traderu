@@ -19,7 +19,6 @@ export function DemoRequestForm({ onClose, onSubmit }: DemoRequestFormProps) {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    // Send to Netlify
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -30,13 +29,12 @@ export function DemoRequestForm({ onClose, onSubmit }: DemoRequestFormProps) {
       })
     })
     .then(() => {
-      // Call the parent onSubmit handler
+      alert("Success!");
       onSubmit({ email, useCase });
       onClose();
     })
     .catch(error => {
-      console.error('Form submission error:', error);
-      alert('There was an error submitting the form. Please try again.');
+      alert("Error: " + error);
     });
   };
 
@@ -55,14 +53,11 @@ export function DemoRequestForm({ onClose, onSubmit }: DemoRequestFormProps) {
         
         <form
           name="demo-request"
-          method="POST"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
+          method="post"
           onSubmit={handleSubmit}
           className="space-y-4"
         >
           <input type="hidden" name="form-name" value="demo-request" />
-          <input type="hidden" name="bot-field" />
           
           <div>
             <label htmlFor="email" className="block text-sm font-medium mb-1">
