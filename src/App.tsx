@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { LineChart, Bot, Zap, BrainCircuit, Bell, BarChart3, Headset as HeadSet, ChevronRight, CheckCircle, Users, MessageSquare, Clock, Code2, Rocket, Plus, Minus, Target } from 'lucide-react';
+import { Bot, Zap, BrainCircuit, Bell, BarChart3, Headset as HeadSet, ChevronRight, CheckCircle, Users, MessageSquare, Clock, Code2, Rocket, Plus, Minus, Target } from 'lucide-react';
 import { DemoRequestForm } from './components/DemoRequestForm';
+import { Logo } from './components/Logo';
 
 function AnimatedSection({ children }: { children: React.ReactNode }) {
   const [ref, inView] = useInView({
@@ -160,18 +161,12 @@ function App() {
       {/* Header */}
       <header className="container mx-auto px-4 py-6">
         <nav className="flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <LineChart className="w-8 h-8 text-blue-500" />
-            <span className="text-xl font-bold">TradingAI</span>
-          </div>
+          <Logo />
           <div className="hidden md:flex space-x-6">
             <a href="#features" className="hover:text-blue-400">Features</a>
             <a href="#process" className="hover:text-blue-400">How It Works</a>
             <a href="#pricing" className="hover:text-blue-400">Pricing</a>
           </div>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg transition duration-200">
-            Get Started
-          </button>
         </nav>
       </header>
 
@@ -409,12 +404,9 @@ function App() {
       {/* Footer */}
       <footer className="container mx-auto px-4 py-8 border-t border-gray-800">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center space-x-2 mb-4 md:mb-0">
-            <LineChart className="w-8 h-8 text-blue-500" />
-            <span className="text-xl font-bold">TradingAI</span>
-          </div>
+          <Logo />
           <div className="text-gray-400">
-            © 2025 TradingAI. All rights reserved.
+            © 2025 TradeNetAI. All rights reserved.
           </div>
         </div>
       </footer>
