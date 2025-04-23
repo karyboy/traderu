@@ -186,7 +186,7 @@ function App() {
                 className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center space-x-2 transition duration-200"
                 type="button"
               >
-                <span>Request Demo</span>
+                <span>Get in Touch Today</span>
                 <ChevronRight className="w-5 h-5" />
               </button>
               <button className="border border-blue-500 text-blue-500 hover:bg-blue-500/10 px-8 py-4 rounded-lg transition duration-200">
@@ -394,7 +394,7 @@ function App() {
               className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center space-x-2 mx-auto transition duration-200"
               type="button"
             >
-              <span>Schedule a Demo</span>
+              <span>Get in Touch Today</span>
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
