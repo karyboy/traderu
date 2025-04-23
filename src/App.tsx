@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Bot, Zap, BrainCircuit, Bell, BarChart3, Headset as HeadSet, ChevronRight, CheckCircle, Users, MessageSquare, Clock, Code2, Rocket, Plus, Minus, Target } from 'lucide-react';
+import { Bot, Zap, BrainCircuit, Bell, BarChart3, Headset as HeadSet, ChevronRight, CheckCircle, Users, MessageSquare, Clock, Code2, Rocket, Plus, Minus, Target, Database } from 'lucide-react';
 import { DemoRequestForm } from './components/DemoRequestForm';
 import { Logo } from './components/Logo';
 
@@ -84,6 +84,11 @@ function App() {
       icon: <MessageSquare className="w-8 h-8 text-blue-500" />,
       title: "Discovery Call",
       description: "Schedule a free consultation to discuss your candlestick strategies."
+    },
+    {
+      icon: <Database className="w-8 h-8 text-purple-500" />,
+      title: "Data Gathering",
+      description: "We translate your approach into data—exactly how you see candlestick formations."
     },
     {
       icon: <Code2 className="w-8 h-8 text-purple-500" />,
@@ -259,18 +264,29 @@ function App() {
           </div>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {process.map((step, index) => (
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {process.slice(0, 3).map((step, index) => (
             <AnimatedSection key={index}>
-              <div className="relative">
-                <div className="bg-white/5 p-6 rounded-xl hover:bg-white/10 transition duration-200">
+              <div className="relative h-full">
+                <div className="bg-white/5 p-6 rounded-xl hover:bg-white/10 transition duration-200 h-full flex flex-col">
                   {step.icon}
                   <h3 className="text-xl font-semibold my-4">{step.title}</h3>
                   <p className="text-gray-400">{step.description}</p>
                 </div>
-                {index < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 right-0 w-full h-0.5 bg-blue-500/20 transform translate-x-1/2" />
-                )}
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mt-8">
+          {process.slice(3).map((step, index) => (
+            <AnimatedSection key={index + 3}>
+              <div className="relative h-full">
+                <div className="bg-white/5 p-6 rounded-xl hover:bg-white/10 transition duration-200 h-full flex flex-col">
+                  {step.icon}
+                  <h3 className="text-xl font-semibold my-4">{step.title}</h3>
+                  <p className="text-gray-400">{step.description}</p>
+                </div>
               </div>
             </AnimatedSection>
           ))}
