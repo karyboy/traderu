@@ -49,7 +49,7 @@ export function DemoRequestForm({ onClose, onSubmit }: DemoRequestFormProps) {
           <X className="w-6 h-6" />
         </button>
         
-        <h2 className="text-2xl font-bold mb-6">Request a Demo</h2>
+        <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
         
         <form
           name="demo-request"
