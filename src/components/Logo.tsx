@@ -15,7 +15,7 @@ export function Logo({ className = "w-16 h-16", showText = true }: LogoProps) {
         className={className}
       />
       {showText && (
-        <span className="text-4xl font-bold ml-2">
+        <span className="text-4xl font-bold">
           <span className="text-white">TradeNet</span>
           <span className="text-purple-500">AI</span>
         </span>
