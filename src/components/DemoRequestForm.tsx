@@ -86,7 +86,7 @@ export function DemoRequestForm({ onClose, onSubmit }: DemoRequestFormProps) {
               value={useCase}
               onChange={(e) => setUseCase(e.target.value)}
               className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[120px]"
-              placeholder="Please describe your trading strategy and how you'd like to use our AI..."
+              placeholder="Please describe your trading strategy and how you'd like to use our AI. We don't share your data with anyone"
             />
           </div>
           

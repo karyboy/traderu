@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Bot, Zap, BrainCircuit, Bell, BarChart3, Headset as HeadSet, ChevronRight, CheckCircle, Users, MessageSquare, Clock, Code2, Rocket, Plus, Minus, Target, Database } from 'lucide-react';
+import { Bot, Zap, BrainCircuit, Bell, BarChart3, Headset as HeadSet, ChevronRight, CheckCircle, Users, MessageSquare, Clock, Code2, Rocket, Plus, Minus, Target, Database, Lock } from 'lucide-react';
 import { DemoRequestForm } from './components/DemoRequestForm';
 import { Logo } from './components/Logo';
 
@@ -68,9 +68,12 @@ function App() {
       description: "Receive instant notifications whenever your specified patterns appear in the market."
     },
     {
-      icon: <BarChart3 className="w-12 h-12 text-green-500" />,
-      title: "Backtesting & Analytics",
-      description: "Validate your patterns over years of historical data to refine accuracy."
+      icon: <Lock className="w-12 h-12 text-green-500" />,
+      title: "Data Privacy First",
+      description: <>
+        Your strategy data stays private.<br/>
+        We don't share, sell, or reuse your inputs.
+      </>
     },
     {
       icon: <HeadSet className="w-12 h-12 text-yellow-500" />,
@@ -180,23 +183,21 @@ function App() {
         <AnimatedSection>
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Empower Your Trading with AI-Customized Candlestick Insights
+              Tailored AI Models for Your Unique Candlestick Strategies
             </h1>
             <p className="text-xl text-gray-300 mb-8">
-              Leverage next-generation AI models to detect patterns and trading setups—tailored to your unique candlestick strategy.
+              Our AI adapts to your style. Unlike standard tools, TradeNetAI models are trained to recognize your candlestick patterns — the setups you trust, aligned with your unique trading strategy
             </p>
-            <div className="flex justify-center space-x-4">
+            <div className="flex flex-col items-center">
               <button 
                 onClick={() => setShowDemoForm(true)}
-                className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center space-x-2 transition duration-200"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center space-x-2 transition duration-200 mb-5"
                 type="button"
               >
-                <span>Get in Touch Today</span>
+                <span>Tell Us How You Trade</span>
                 <ChevronRight className="w-5 h-5" />
               </button>
-              <button className="border border-blue-500 text-blue-500 hover:bg-blue-500/10 px-8 py-4 rounded-lg transition duration-200">
-                Learn More
-              </button>
+              <p className="text-sm text-gray-400 italic">This isn't plug-and-play — it's made-to-fit.</p>
             </div>
           </div>
         </AnimatedSection>
@@ -410,7 +411,7 @@ function App() {
               className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center space-x-2 mx-auto transition duration-200"
               type="button"
             >
-              <span>Get in Touch Today</span>
+              <span>Tell Us How You Trade</span>
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
