@@ -149,7 +149,7 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Video */}
         <div className="absolute inset-0 w-full h-full">
           <video
@@ -157,37 +157,41 @@ function App() {
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-50"
+            className="absolute inset-0 w-full h-full object-cover opacity-40"
             src={backgroundVideo}
           />
-          {/* Dark overlay with gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 via-gray-900/70 to-gray-900/90"></div>
+          {/* Enhanced gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-900/60 to-gray-900 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/50 via-transparent to-gray-900/50 pointer-events-none"></div>
         </div>
 
         {/* Content */}
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection>
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">
+              <h1 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
                 Tailored AI Models for Your Unique Candlestick Strategies
               </h1>
-              <p className="text-xl text-gray-100 mb-8 drop-shadow-lg">
+              <p className="text-xl text-gray-50 mb-10 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] leading-relaxed">
                 Our AI adapts to your style. Unlike standard tools, TradeNetAI models are trained to recognize your candlestick patterns — the setups you trust, aligned with your unique trading strategy
               </p>
               <div className="flex flex-col items-center">
                 <button 
                   onClick={() => setShowDemoForm(true)}
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center space-x-2 transition duration-200 mb-5 shadow-lg"
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center space-x-2 transition duration-200 mb-6 shadow-lg hover:shadow-blue-500/20"
                   type="button"
                 >
                   <span>Tell Us How You Trade</span>
                   <ChevronRight className="w-5 h-5" />
                 </button>
-                <p className="text-sm text-gray-300 italic drop-shadow-lg">This isn't plug-and-play — it's made-to-fit.</p>
+                <p className="text-sm text-gray-200 italic drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">This isn't plug-and-play — it's made-to-fit.</p>
               </div>
             </div>
           </AnimatedSection>
         </div>
+
+        {/* Bottom fade for smoother transition */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900 to-transparent pointer-events-none"></div>
       </section>
 
       {/* Mission Statement Section */}
