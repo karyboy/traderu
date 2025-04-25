@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Bot, Zap, BrainCircuit, Bell, BarChart3, Headset as HeadSet, ChevronRight, CheckCircle, Users, MessageSquare, Clock, Code2, Rocket, Plus, Minus, Target, Database, Lock } from 'lucide-react';
 import { DemoRequestForm } from './components/DemoRequestForm';
 import { Logo } from './components/Logo';
+import backgroundVideo from './assets/video1.mov';
 
 function AnimatedSection({ children }: { children: React.ReactNode }) {
   const [ref, inView] = useInView({
@@ -121,7 +122,7 @@ function App() {
     },
     {
       question: "Do I need technical or coding knowledge to use this?",
-      answer: "None. You’ll simply highlight candlestick setups directly on a chart in our webapp — no coding needed. We take care of translating your marked patterns into AI-powered logic."
+      answer: "None. You'll simply highlight candlestick setups directly on a chart in our webapp — no coding needed. We take care of translating your marked patterns into AI-powered logic."
     },
     {
       question: "What markets do you support?",
@@ -148,38 +149,45 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20">
-        <AnimatedSection>
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Tailored AI Models for Your Unique Candlestick Strategies
-            </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Our AI adapts to your style. Unlike standard tools, TradeNetAI models are trained to recognize your candlestick patterns — the setups you trust, aligned with your unique trading strategy
-            </p>
-            <div className="flex flex-col items-center">
-              <button 
-                onClick={() => setShowDemoForm(true)}
-                className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center space-x-2 transition duration-200 mb-5"
-                type="button"
-              >
-                <span>Tell Us How You Trade</span>
-                <ChevronRight className="w-5 h-5" />
-              </button>
-              <p className="text-sm text-gray-400 italic">This isn't plug-and-play — it's made-to-fit.</p>
-            </div>
-          </div>
-        </AnimatedSection>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+        {/* Background Video */}
+        <div className="absolute inset-0 w-full h-full">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-50"
+            src={backgroundVideo}
+          />
+          {/* Dark overlay with gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 via-gray-900/70 to-gray-900/90"></div>
+        </div>
 
-        <AnimatedSection>
-          <div className="mt-16 bg-white/5 backdrop-blur-lg rounded-2xl p-8">
-            <img
-              src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&fit=crop&w=2000&q=80"
-              alt="AI Trading Dashboard"
-              className="rounded-lg shadow-2xl w-full"
-            />
-          </div>
-        </AnimatedSection>
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
+          <AnimatedSection>
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">
+                Tailored AI Models for Your Unique Candlestick Strategies
+              </h1>
+              <p className="text-xl text-gray-100 mb-8 drop-shadow-lg">
+                Our AI adapts to your style. Unlike standard tools, TradeNetAI models are trained to recognize your candlestick patterns — the setups you trust, aligned with your unique trading strategy
+              </p>
+              <div className="flex flex-col items-center">
+                <button 
+                  onClick={() => setShowDemoForm(true)}
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center space-x-2 transition duration-200 mb-5 shadow-lg"
+                  type="button"
+                >
+                  <span>Tell Us How You Trade</span>
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+                <p className="text-sm text-gray-300 italic drop-shadow-lg">This isn't plug-and-play — it's made-to-fit.</p>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
       </section>
 
       {/* Mission Statement Section */}
