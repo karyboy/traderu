@@ -23,7 +23,7 @@ function AnimatedSection({ children }: { children: React.ReactNode }) {
   );
 }
 
-function FAQItem({ question, answer }: { question: string; answer: string }) {
+function FAQItem({ question, answer }: { question: string; answer: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -110,41 +110,6 @@ function App() {
     }
   ];
 
-  const plans = [
-    {
-      name: "Starter",
-      price: "299",
-      features: [
-        "1 Custom Pattern Detection",
-        "Basic Real-time Alerts",
-        "Email Support",
-        "Basic Backtesting"
-      ]
-    },
-    {
-      name: "Pro",
-      price: "599",
-      features: [
-        "5 Custom Patterns",
-        "Unlimited Real-time Alerts",
-        "Priority Support",
-        "Advanced Backtesting",
-        "API Access"
-      ]
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      features: [
-        "Unlimited Patterns",
-        "Dedicated Data Scientist",
-        "Custom Integrations",
-        "24/7 Support",
-        "Private Cloud Deployment"
-      ]
-    }
-  ];
-
   const faqs = [
     {
       question: "How accurate are your AI models?",
@@ -156,11 +121,15 @@ function App() {
     },
     {
       question: "Do I need technical or coding knowledge to use this?",
-      answer: "Not at all. We handle all the technical aspects. You just need to describe your patterns and preferences for how you want alerts delivered. Our team translates your trading knowledge into AI models."
+      answer: "None. You’ll simply highlight candlestick setups directly on a chart in our webapp — no coding needed. We take care of translating your marked patterns into AI-powered logic."
     },
     {
       question: "What markets do you support?",
       answer: "We support any market that can be charted with candlesticks, including stocks, forex, crypto, and commodities. If you have specialized market needs, we're happy to discuss custom solutions."
+    },
+    {
+      question: "How much does it cost?",
+      answer: <>Each AI model is custom. <button onClick={() => setShowDemoForm(true)} className="text-blue-400 hover:text-blue-300 underline">Click here to request a quote</button>.</>
     }
   ];
 
@@ -173,7 +142,7 @@ function App() {
           <div className="hidden md:flex space-x-6">
             <a href="#features" className="hover:text-blue-400">Features</a>
             <a href="#process" className="hover:text-blue-400">How It Works</a>
-            <a href="#pricing" className="hover:text-blue-400">Pricing</a>
+            <a href="#faq" className="hover:text-blue-400">FAQ</a>
           </div>
         </nav>
       </header>
@@ -338,43 +307,6 @@ function App() {
               <p className="text-sm text-gray-400">Crypto Trader</p>
             </div>
           </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="pricing" className="container mx-auto px-4 py-20">
-        <AnimatedSection>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Flexible Plans</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Choose the perfect plan for your trading needs.
-            </p>
-          </div>
-        </AnimatedSection>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
-            <AnimatedSection key={index}>
-              <div className="bg-white/5 p-8 rounded-xl hover:bg-white/10 transition duration-200">
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold">${plan.price}</span>
-                  {plan.price !== "Custom" && <span className="text-gray-400">/month</span>}
-                </div>
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-center space-x-2">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <button className="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition duration-200">
-                  Get Started
-                </button>
-              </div>
-            </AnimatedSection>
-          ))}
         </div>
       </section>
 
