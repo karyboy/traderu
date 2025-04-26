@@ -159,6 +159,9 @@ function App() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-40"
             src={backgroundVideo}
+            aria-label="Background visualization of AI-powered candlestick pattern analysis"
+            title="Tailored AI Models for Your Unique Candlestick Trading Strategy"
+            role="presentation"
           />
           {/* Enhanced gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-900/60 to-gray-900 pointer-events-none"></div>
