@@ -171,11 +171,11 @@ function App() {
         {/* Content */}
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection>
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
-                Tailored AI Models for Your Unique Candlestick Strategies
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] leading-tight">
+                Your trading brain,<br />encoded in an AI model
               </h1>
-              <p className="text-xl text-gray-50 mb-10 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] leading-relaxed">
+              <p className="text-xl text-gray-50 mb-10 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] leading-relaxed max-w-2xl mx-auto">
                 Our AI adapts to your style. Unlike standard tools, TradeNetAI models are trained to recognize your candlestick patterns — the setups you trust, aligned with your unique trading strategy
               </p>
               <div className="flex flex-col items-center mt-16">
@@ -188,7 +188,6 @@ function App() {
                   <ChevronRight className="w-5 h-5" />
                 </button>
                 <div className="text-sm text-gray-200 italic drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] leading-relaxed whitespace-nowrap">
-                  <p>Get your trading brain, encoded in an AI model</p>
                   <p>It's custom-built, not off-the-shelf</p>
                 </div>
               </div>
