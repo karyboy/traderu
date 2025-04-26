@@ -275,53 +275,6 @@ function App() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="container mx-auto px-4 py-20">
-        <AnimatedSection>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Trusted by Traders</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              See what our clients say about their experience with our AI models.
-            </p>
-          </div>
-        </AnimatedSection>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          <AnimatedSection>
-            <div className="bg-white/5 p-6 rounded-xl">
-              <Users className="w-12 h-12 text-blue-500 mb-4" />
-              <p className="text-gray-300 mb-4">
-                "I used to miss important candlestick reversals because of my busy schedule. Now, my custom AI flags them for me in real time!"
-              </p>
-              <p className="font-semibold">Alex R.</p>
-              <p className="text-sm text-gray-400">Swing Trader</p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection>
-            <div className="bg-white/5 p-6 rounded-xl">
-              <CheckCircle className="w-12 h-12 text-green-500 mb-4" />
-              <p className="text-gray-300 mb-4">
-                "Their backtesting feature helped me spot flaws in my patterns. I refined them—and my model's accuracy improved!"
-              </p>
-              <p className="font-semibold">Jamie D.</p>
-              <p className="text-sm text-gray-400">Day Trader</p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection>
-            <div className="bg-white/5 p-6 rounded-xl">
-              <Bot className="w-12 h-12 text-purple-500 mb-4" />
-              <p className="text-gray-300 mb-4">
-                "It's like having an extra pair of eyes on hundreds of charts at once—my candlestick setups are never overlooked."
-              </p>
-              <p className="font-semibold">Morgan T.</p>
-              <p className="text-sm text-gray-400">Crypto Trader</p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section id="faq" className="container mx-auto px-4 py-20">
         <AnimatedSection>
