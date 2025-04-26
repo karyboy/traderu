@@ -176,20 +176,17 @@ function App() {
                 Your trading brain,<br />encoded in an AI model
               </h1>
               <p className="text-xl text-gray-50 mb-10 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] leading-relaxed max-w-2xl mx-auto">
-                Our AI adapts to your style. Unlike standard tools, TradeNetAI models are trained to recognize your candlestick patterns — the setups you trust, aligned with your unique trading strategy
+                We build custom AI models that spot your proven candlestick setups 24/7 across multiple markets. No missed opportunities, no emotional decisions—just your strategy, automated with precision
               </p>
               <div className="flex flex-col items-center mt-16">
                 <button 
                   onClick={() => setShowDemoForm(true)}
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center space-x-2 transition duration-200 mb-3 shadow-lg hover:shadow-blue-500/20"
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg flex items-center space-x-2 transition duration-200 shadow-lg hover:shadow-blue-500/20"
                   type="button"
                 >
                   <span>Tell Us How You Trade</span>
                   <ChevronRight className="w-5 h-5" />
                 </button>
-                <div className="text-sm text-gray-200 italic drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] leading-relaxed whitespace-nowrap">
-                  <p>It's custom-built, not off-the-shelf</p>
-                </div>
               </div>
             </div>
           </AnimatedSection>
