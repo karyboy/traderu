@@ -97,7 +97,7 @@ function App() {
     {
       icon: <Code2 className="w-8 h-8 text-purple-500" />,
       title: "Model Development",
-      description: "We build and train your custom AI model using advanced ML techniques."
+      description: "We build and train your custom AI model using advanced machine learning techniques."
     },
     {
       icon: <Clock className="w-8 h-8 text-green-500" />,
@@ -114,7 +114,7 @@ function App() {
   const faqs = [
     {
       question: "How accurate are your AI models?",
-      answer: "Accuracy largely depends on the quality and scope of your data and pattern definitions. We collaborate closely to ensure your model aligns with your specific candlestick setups and continuously refine it based on performance metrics."
+      answer: "Accuracy largely depends on the quality and scope of your data and pattern definitions. We collaborate closely to ensure your model aligns with your specific candlestick setups and continuously refine it based on performance metrics and advanced machine learning techniques."
     },
     {
       question: "Can I integrate these AI signals with my trading platform?",
@@ -175,9 +175,9 @@ function App() {
               <h1 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] leading-tight">
                 Your trading brain,<br />encoded in an AI model
               </h1>
-              <p className="text-xl text-gray-50 mb-10 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] leading-relaxed max-w-2xl mx-auto">
+              <h2 className="text-xl text-gray-50 mb-10 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] leading-relaxed max-w-2xl mx-auto font-normal">
                 We build custom AI models that spot your proven candlestick setups 24/7 across multiple markets. No missed opportunities, no emotional decisions—just your strategy, automated with precision
-              </p>
+              </h2>
               <div className="flex flex-col items-center mt-16">
                 <button 
                   onClick={() => setShowDemoForm(true)}
