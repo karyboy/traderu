@@ -114,7 +114,7 @@ function App() {
   const faqs = [
     {
       question: "How accurate are your AI models?",
-      answer: "Accuracy largely depends on the quality and scope of your data and pattern definitions. We collaborate closely to ensure your model aligns with your specific candlestick setups and continuously refine it based on performance metrics and advanced machine learning techniques."
+      answer: "Accuracy largely depends on the quality and scope of your data and pattern definitions. We collaborate closely to ensure your model aligns with your specific candlestick setups and continuously refine it based on performance metrics and advanced machine learning techniques. For perspective, our in-house trading models achieve approximately 97% accuracy."
     },
     {
       question: "Can I integrate these AI signals with my trading platform?",
