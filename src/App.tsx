@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Bot, Zap, BrainCircuit, Bell, BarChart3, Headset as HeadSet, ChevronRight, CheckCircle, Users, MessageSquare, Clock, Code2, Rocket, Plus, Minus, Target, Database, Lock } from 'lucide-react';
+import { Bot, Zap, BrainCircuit, Bell, BarChart3, Headset as HeadSet, ChevronRight, CheckCircle, Users, MessageSquare, Clock, Code2, Rocket, Plus, Minus, Target, Database, Lock, Lightbulb } from 'lucide-react';
 import { DemoRequestForm } from './components/DemoRequestForm';
 import { Logo } from './components/Logo';
 import backgroundVideo from './assets/video1.mov';
@@ -86,8 +86,8 @@ function App() {
   const process = [
     {
       icon: <MessageSquare className="w-8 h-8 text-blue-500" />,
-      title: "Discovery Call",
-      description: "Schedule a free consultation to discuss your candlestick strategies."
+      title: "Discovery Sync",
+      description: "We learn about your trading style and candlestick strategies using intuitive tooling designed to make sharing your approach easy and seamless."
     },
     {
       icon: <Database className="w-8 h-8 text-purple-500" />,
@@ -200,14 +200,21 @@ function App() {
       <section className="container mx-auto px-4 py-16 -mt-10">
         <AnimatedSection>
           <div className="max-w-4xl mx-auto bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-8 backdrop-blur-sm border border-white/10">
-            <div className="flex items-start space-x-6">
-              <Target className="w-12 h-12 text-blue-400 flex-shrink-0 mt-1" />
-              <div>
-                <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Our Mission</h2>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  We believe every trader has a unique perspective on the market, and our mission is to translate that perspective into a powerful AI solution. Our team is passionate about blending human expertise with advanced machine learning for truly personalized insights.
-                </p>
+            <div className="bg-gradient-to-br from-blue-900/80 to-purple-900/80 rounded-xl p-6 shadow-lg border border-blue-700/30">
+              <div className="flex items-center mb-2">
+                <Lightbulb className="w-6 h-6 text-blue-400 mr-2" />
+                <span className="font-semibold text-white text-lg">How is it different from generic technical indicators?</span>
               </div>
+              <ul className="list-disc pl-5 text-gray-200 space-y-2 mb-2">
+                <li><span className="font-bold text-blue-300">Generic technical indicators</span> rely on rigid mathematical formulas to define market behavior.</li>
+                <li>They try to describe every pattern with math, but <span className="font-bold">not every pattern can be captured by a formula</span>.</li>
+                <li>There are <span className="font-bold">visual nuances</span>—the specific shape of a candle, its wick length, or its position relative to other candles—that formulas simply cannot see.</li>
+                <li><span className="font-bold text-purple-300">Our AI is fundamentally different:</span> It doesn't use formulas; it learns to <span className="font-bold">see the market through your eyes</span>.</li>
+                <li>By training on <span className="font-bold">visual examples of your proven setups</span>, it learns to recognize the subtle, intuitive patterns that you, the trader, identify.</li>
+              </ul>
+              <blockquote className="border-l-4 border-blue-400 pl-4 italic text-blue-200 mt-2">
+                It captures the <b>art</b> of your trading, not just a mathematical approximation of it.
+              </blockquote>
             </div>
           </div>
         </AnimatedSection>
