@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Bot, Zap, BrainCircuit, Bell, BarChart3, Headset as HeadSet, ChevronRight, CheckCircle, Users, MessageSquare, Clock, Code2, Rocket, Plus, Minus, Target, Database, Lock, Lightbulb } from 'lucide-react';
+import { Bot, Zap, BrainCircuit, Bell, BarChart3, Headset as HeadSet, ChevronRight, CheckCircle, Users, MessageSquare, Clock, Code2, Rocket, Plus, Minus, Target, Database, Lock, Lightbulb, Play, X } from 'lucide-react';
 import { DemoRequestForm } from './components/DemoRequestForm';
 import { Logo } from './components/Logo';
 import backgroundVideo from './assets/video1.mov';
@@ -49,8 +49,38 @@ function FAQItem({ question, answer }: { question: string; answer: React.ReactNo
   );
 }
 
+function VideoModal({ isOpen, onClose, videoUrl }: { isOpen: boolean; onClose: () => void; videoUrl: string }) {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+      <div className="relative w-full max-w-4xl mx-4">
+        <button
+          onClick={onClose}
+          className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+        >
+          <X className="w-8 h-8" />
+        </button>
+        <div className="relative w-full aspect-video">
+          <iframe
+            src={videoUrl}
+            title="Explainer Video"
+            className="w-full h-full rounded-lg"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [showDemoForm, setShowDemoForm] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+
+  // YouTube embed URL for the explainer video
+  const videoUrl = "https://www.youtube.com/embed/Uftx4kz9h_8?rel=0&modestbranding=1";
 
   const handleDemoSubmit = (data: { email: string; useCase: string }) => {
     // Here you would typically send this data to your backend
@@ -175,6 +205,20 @@ function App() {
               <h1 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)] leading-tight">
                 Your trading brain,<br />encoded in an AI model
               </h1>
+              
+              {/* Video Button */}
+              <div className="mb-10">
+                <button
+                  onClick={() => setShowVideo(true)}
+                  className="inline-flex items-center space-x-3 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg transition duration-200 backdrop-blur-sm border border-white/20 hover:border-white/30 group"
+                >
+                  <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                    <Play className="w-5 h-5 text-white ml-0.5" />
+                  </div>
+                  <span className="font-medium">Watch Explainer Video</span>
+                </button>
+              </div>
+
               <h2 className="text-xl text-gray-50 mb-10 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] leading-relaxed max-w-2xl mx-auto font-normal">
                 We build custom AI models that spot your proven candlestick setups 24/7 across multiple markets. No missed opportunities, no emotional decisions—just your strategy, automated with precision
               </h2>
@@ -340,6 +384,12 @@ function App() {
           onSubmit={handleDemoSubmit}
         />
       )}
+
+      <VideoModal
+        isOpen={showVideo}
+        onClose={() => setShowVideo(false)}
+        videoUrl={videoUrl}
+      />
     </div>
   );
 }
